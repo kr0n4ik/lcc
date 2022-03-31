@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="module/nv.d3/nv.d3.css" rel="stylesheet" type="text/css">
+		<script ype="text/javascript"  src="module/main/jquery.min.js"></script>
+		<script ype="text/javascript"  src="module/main/ferrite.js"></script>
+		<script src="module/nv.d3/d3.min.js" charset="utf-8"></script>
+		<script src="module/nv.d3/nv.d3.js"></script>
+	</head>
+<body>
+
+	<div style="width:800px; float:left;">
+		<table width="520px">
+			<tr>
+				<td width="300px">Тип управления</td>
+				<td>
+					<select id="type" style="width:209px">
+						<option value="0">Full-bridge</option>
+						<option value="1">Half-bridge</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td width="300px">Частота, кГц</td>
+				<td><input style="width:200px" type="text" id="f" value="400"/></td>
+			</tr>
+			<tr>
+				<td width="300px">Входное напряжение, В</td>
+				<td>
+					<input style="width:59px" type="text" id="u_in_min" value="296"/>
+					<input style="width:59px" type="text" id="u_in_nom" value="310"/>
+					<input style="width:59px" type="text" id="u_in_max" value="324"/>
+				</td>
+			</tr>
+			<tr>
+				<td width="300px">Выходное напряжение, В</td>
+				<td><input style="width:200px" type="text" id="u_out" value="1100"/></td>
+			</tr>
+			<tr>
+				<td width="300px">Выходная нагрузка, Ом</td>
+				<td><input style="width:200px" type="text" id="r_out" value="0"/></td>
+			</tr>
+			<tr>
+				<td width="300px">Выходной ток, А</td>
+				<td><input style="width:200px" type="text" id="i_out" value="1"/></td>
+			</tr>
+			<tr>
+				<td width="300px">Индуктивность дроселя, мкГн</td>
+				<td><input style="width:200px" type="text" id="dr_l" value="120"/></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">Параметры трансформатора</td>
+			</tr>
+			<tr>
+				<td width="300px">Тип сердечника</td>
+				<td>
+					<select id="tr_i" style="width:209px">
+						<option disabled>Выберите сердечник</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td width="300px">Индуктивность, мкГн</td>
+				<td><input style="width:200px" type="text" id="tr_l" value="0"/></td>
+			</tr>
+			<tr>
+				<td width="300px">Количество витков, шт.</td>
+				<td><input style="width:200px" type="text" id="tr_n" value="0"/></td>
+			</tr>
+			<tr>
+				<td width="300px">Плотность магнитной инд., мТл</td>
+				<td><input style="width:200px" type="text" id="tr_b" value="70"/></td>
+			</tr>
+		</table>
+		<button id="go">Расчет</button>
+		<div id="chart1" style="height:400px; width: 800px;"></div>
+		<div id="chart2" style="height:400px; width: 800px;"></div>
+	</div>
+	<div id="out" style="margin-left:850px; height:400px; width: 800px;"></div>
+	
+	<script ype="text/javascript"  src="module/main/lcc.js"></script>
+</body>
+</html>
